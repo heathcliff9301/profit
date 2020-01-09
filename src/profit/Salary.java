@@ -1,11 +1,8 @@
-package profit;
-
 public class Salary {
 	public double salary ;
 	public double commission ;
-	public Salary(double salary, double commission) {
+	public Salary(double salary) {
 		this.salary = salary;
-		this.commission = commission;
 	}
 	public double getSalary() {
 		return salary;
@@ -20,10 +17,6 @@ public class Salary {
 		this.commission = commission;
 	}
 	public String toString() {
-		return "Salary [salary=" + salary + ", commission=" + commission + ", getSalary()=" + getSalary()
-				+ ", getCommission()=" + getCommission() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
-				+ ", toString()=" + super.toString() + "]";
+		return "Pay : "+(salary+commission)+"\nSalary : "+salary+" Commission : "+commission;
 	}
-	
-
 }

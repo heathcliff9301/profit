@@ -1,31 +1,43 @@
-package profit;
 
 public class Employee {
-	public String empName;
-	public String empId;
-	public Employee(String empName, String empId) {
-		super();
+
+	private String empName;
+	private String empId;
+	private Salary salary;
+
+	public Employee ( String empName , String empId ) {
 		this.empName = empName;
 		this.empId = empId;
 	}
-	public String getEmpName() {
+
+	public Salary getSalary ( ) {
+		return salary;
+	}
+
+	public void setSalary ( Salary salary ) {
+		this.salary = salary;
+	}
+
+	public String getEmpName ( ) {
 		return empName;
 	}
-	public void setEmpName(String empName) {
+
+	public void setEmpName ( String empName ) {
 		this.empName = empName;
 	}
-	public String getEmpId() {
+
+	public String getEmpId ( ) {
 		return empId;
 	}
-	public void setEmpId(String empId) {
+
+	public void setEmpId ( String empId ) {
 		this.empId = empId;
 	}
+
 	@Override
-	public String toString() {
-		return "Employee [empName=" + empName + ", empId=" + empId + ", getEmpName()=" + getEmpName() + ", getEmpId()="
-				+ getEmpId() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
-				+ super.toString() + "]";
+	public String toString ( ) {
+		return "ID : "+empId+" Name : "+empName;
 	}
-	
-	
+
+
 }
