@@ -13,6 +13,7 @@ public class ProfitDemo {
 		double empSalary;
 		double salesMonth;
 		int menu;
+		int indexOf;
 		do {
 			menu ( );
 			menu = sc.nextInt ( );
@@ -35,6 +36,11 @@ public class ProfitDemo {
 						break;
 					}
 					displayEmployee (emp);
+					System.out.print ("Enter ID To Delete : ");
+					empId = sc.next ( );
+					indexOf = indexOf (emp,empId);
+					System.out.println ("Detail Employee : "+emp.get (indexOf (emp,empId)).toString () );
+					deleteEmployee (emp,indexOf);
 					break;
 				case 3:
 					if (emp.isEmpty ( )) {
@@ -42,13 +48,22 @@ public class ProfitDemo {
 						break;
 					}
 					displayEmployee (emp);
-					System.out.print ("Enter ID : ");
-					empId = sc.next ( );
-					System.out.print ("Enter Monthly Sales : ");
-					salesMonth = sc.nextDouble ( );
-					calCommission (emp.get (indexOf (emp,empId)) , salesMonth);
 					break;
 				case 4:
+					if (emp.isEmpty ( )) {
+						System.out.println ("Not have employee.");
+						break;
+					}
+					displayEmployee (emp);
+					System.out.print ("Enter ID : ");
+					empId = sc.next ( );
+					System.out.println ("Detail Employee : "+emp.get (indexOf (emp,empId)).toString () );
+					System.out.print ("Enter Monthly Sales : ");
+					salesMonth = sc.nextDouble ( );
+					indexOf = indexOf (emp,empId);
+					calCommission (emp.get (indexOf) , salesMonth);
+					break;
+				case 5:
 					if (emp.isEmpty ( )) {
 						System.out.println ("Not have employee.");
 						break;
@@ -65,9 +80,10 @@ public class ProfitDemo {
 	public static void menu ( ) {
 		System.out.println ("\nWelcome to calculate salary program.");
 		System.out.println ("  1. Add Employee.");
-		System.out.println ("  2. Show Employee.");
-		System.out.println ("  3. Update Period Sell Of Month.");
-		System.out.println ("  4. Report Salary Of Employee.");
+		System.out.println ("  2. Delete Employee.");
+		System.out.println ("  3. Show Employee.");
+		System.out.println ("  4. Update Period Sell Of Month.");
+		System.out.println ("  5. Report Salary Of Employee.");
 		System.out.print (" Enter Menu [1-4] : ");
 	}
 
@@ -106,5 +122,9 @@ public class ProfitDemo {
 		}
 		return index;
 	}
+	public static void deleteEmployee(ArrayList<Employee> emp,int indexOf){
+		emp.remove (indexOf);
+		System.out.println ("Delete Complete" );
+		displayEmployee (emp);
+	}
 }
-
