@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -103,10 +102,7 @@ public class ProfitDemo {
 		else
 			commission = 0;
 
-		if (emp.getSalary ().getSalary ()+commission > 18000)
-			emp.getSalary ( ).setCommission (commission);
-		else
-			emp.getSalary ().setSalary (18000);
+		emp.getSalary ( ).setCommission (commission);
 		System.out.println ("Update Complete");
 	}
 
