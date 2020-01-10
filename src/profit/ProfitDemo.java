@@ -2,6 +2,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import test.Employee;
+
 public class ProfitDemo {
 	public static void main ( String[] args ) {
 		Scanner sc = new Scanner (System.in);
@@ -93,19 +95,24 @@ public class ProfitDemo {
 	}
 
 	public static void calCommission ( Employee emp , double salesMonth ) {
-		double commission;
+		double commission = 0;
+		if(emp.getSalary().getSalary() < 15000.0 && salesMonth > 100000) {
+				commission = (salesMonth * 0.03)+3000;
+		}else {
 		if (salesMonth > 100000)
 			commission = salesMonth * 0.03;
 		else if (salesMonth > 50000)
-			commission = salesMonth * 0.03;
+			commission = salesMonth * 0.02;
 		else if (salesMonth > 0)
 			commission = salesMonth * 0.01;
 		else
 			commission = 0;
-
+		}
+		
 		emp.getSalary ( ).setCommission (commission);
 		System.out.println ("Update Complete");
 	}
+
 
 	public static void displayReport ( ArrayList<Employee> emp ) {
 		for (int i = 0; i < emp.size ( ); i++)

@@ -1,3 +1,2 @@
 # profit
-profit Start Project
-version test
+profit Start Project C
