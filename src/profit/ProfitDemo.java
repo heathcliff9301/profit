@@ -79,7 +79,7 @@ public class ProfitDemo {
 	}
 
 	public static void menu ( ) {
-		System.out.println ("\nWelcome to calculate salary program.");
+		System.out.println ("\nWelcome to calculate salary program ProjectAV.1.1.1 .");
 		System.out.println ("  1. Add Employee.");
 		System.out.println ("  2. Delete Employee.");
 		System.out.println ("  3. Show Employee.");
